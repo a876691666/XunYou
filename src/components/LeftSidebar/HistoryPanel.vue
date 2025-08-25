@@ -121,7 +121,7 @@ function search_fun(v: string) {
     </div>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .HistoryPanel {
     height: 100%;
     display: flex;

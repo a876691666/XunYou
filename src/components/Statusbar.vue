@@ -13,7 +13,7 @@ const cursor_store = useCursorStore();
     </div>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .StatusBar.dark {
     background-color: #202020;
 }

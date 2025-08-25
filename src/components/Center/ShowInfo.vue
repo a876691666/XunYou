@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .Init_info {
   position: absolute;
   left: 50%;

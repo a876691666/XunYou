@@ -85,7 +85,7 @@ onBeforeMount(() => {
     </div>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .Setting {
     display: flex;
     flex-direction: column;

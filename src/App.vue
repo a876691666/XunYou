@@ -57,7 +57,7 @@ onMounted(() => {
 </template>
 
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .MainWindow {
   display: flex;
   flex-direction: column;

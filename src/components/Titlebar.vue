@@ -2,9 +2,6 @@
 import { nextTick, onMounted, ref } from "vue";
 import { getCurrentWebviewWindow } from "@tauri-apps/api/webviewWindow";
 import { invoke } from "@tauri-apps/api/core";
-import { Close } from "@vicons/ionicons5"
-import { Maximize16Regular } from "@vicons/fluent"
-import { MinusOutlined } from "@vicons/antd"
 import { useNovelStore } from "../store/novel";
 import { useCursorStore } from "../store/cursor";
 import { Sunny, Moon } from "@element-plus/icons-vue"
@@ -90,20 +87,40 @@ function change_theme() {
             </el-switch>
             <div class="mmc">
                 <el-icon class="min" color="#7f7f7f" size="20" @click="WinMin">
-                    <MinusOutlined />
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 1024 1024">
+                        <path
+                            d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"
+                            fill="currentColor" data-darkreader-inline-fill=""
+                            style="--darkreader-inline-fill: currentColor;"></path>
+                    </svg>
                 </el-icon>
                 <el-icon class="max" color="#7f7f7f" size="20" @click="WinTogMax">
-                    <Maximize16Regular />
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 16 16">
+                        <g fill="none">
+                            <path
+                                d="M4.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zm0 1h7a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5z"
+                                fill="currentColor" data-darkreader-inline-fill=""
+                                style="--darkreader-inline-fill: currentColor;"></path>
+                        </g>
+                    </svg>
                 </el-icon>
                 <el-icon class="close" color="#7f7f7f" size="20" @click="WinClose">
-                    <Close />
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 512 512">
+                        <path
+                            d="M289.94 256l95-95A24 24 0 0 0 351 127l-95 95l-95-95a24 24 0 0 0-34 34l95 95l-95 95a24 24 0 1 0 34 34l95-95l95 95a24 24 0 0 0 34-34z"
+                            fill="currentColor" data-darkreader-inline-fill=""
+                            style="--darkreader-inline-fill: currentColor;"></path>
+                    </svg>
                 </el-icon>
             </div>
         </div>
     </div>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .Titlebar {
     height: 30px;
     line-height: 30px;

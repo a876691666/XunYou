@@ -29,7 +29,7 @@ onMounted(async () => {
     </div>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .CenterView {
     position: relative;
     flex-grow: 1;

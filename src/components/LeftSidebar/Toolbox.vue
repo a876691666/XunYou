@@ -25,7 +25,7 @@
     </div>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .Toolbox {
     height: 100%;
     display: flex;

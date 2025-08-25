@@ -104,7 +104,7 @@ function dclick_novel(index: number) {
     </div>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .SearchPanel {
     display: flex;
     flex-direction: column;

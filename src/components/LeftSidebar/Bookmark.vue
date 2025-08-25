@@ -81,7 +81,7 @@ async function del_mark() {
     </div>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .Bookmark {
     background-color: var(--base-bgc);
     height: 100%;

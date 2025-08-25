@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted, reactive, ref } from 'vue';
-import { CalendarSearch20Regular, Settings24Regular } from "@vicons/fluent"
 import SearchPanel from '../components/RightSidebar/SearchPanel.vue';
 import Setting from '../components/RightSidebar/Setting.vue';
 import { useCursorStore } from '../store/cursor';
@@ -123,19 +122,35 @@ function fun_is_show(name: string) {
         <div class="Toolbar">
             <div class="top">
                 <el-icon class="icon" size="25" color="#585858" title="搜索小说" @click="switch_panel('search')">
-                    <CalendarSearch20Regular />
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 20 20">
+                        <g fill="none">
+                            <path
+                                d="M17 5.5A2.5 2.5 0 0 0 14.5 3h-9A2.5 2.5 0 0 0 3 5.5v3.756c.318-.112.653-.19 1-.229V7h12v7.5a1.5 1.5 0 0 1-1.5 1.5H9.121l1 1H14.5a2.5 2.5 0 0 0 2.5-2.5v-9zM5.5 4h9A1.5 1.5 0 0 1 16 5.5V6H4v-.5A1.5 1.5 0 0 1 5.5 4zm1.096 12.303a3.5 3.5 0 1 1 .707-.707l2.55 2.55a.5.5 0 0 1-.707.708l-2.55-2.55zM7 13.5a2.5 2.5 0 1 0-5 0a2.5 2.5 0 0 0 5 0z"
+                                fill="currentColor" data-darkreader-inline-fill=""
+                                style="--darkreader-inline-fill: currentColor;"></path>
+                        </g>
+                    </svg>
                 </el-icon>
             </div>
             <div class="bottom">
                 <el-icon class="icon" size="25" color="#585858" title="设置" @click="switch_panel('setting')">
-                    <Settings24Regular />
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 24 24">
+                        <g fill="none">
+                            <path
+                                d="M12.013 2.25c.734.008 1.465.093 2.181.253a.75.75 0 0 1 .582.649l.17 1.527a1.384 1.384 0 0 0 1.928 1.116l1.4-.615a.75.75 0 0 1 .85.174a9.793 9.793 0 0 1 2.204 3.792a.75.75 0 0 1-.271.825l-1.242.916a1.38 1.38 0 0 0 .001 2.226l1.243.915a.75.75 0 0 1 .271.826a9.798 9.798 0 0 1-2.203 3.792a.75.75 0 0 1-.849.175l-1.406-.617a1.38 1.38 0 0 0-1.927 1.114l-.169 1.526a.75.75 0 0 1-.572.647a9.518 9.518 0 0 1-4.405 0a.75.75 0 0 1-.572-.647l-.17-1.524a1.382 1.382 0 0 0-1.924-1.11l-1.407.616a.75.75 0 0 1-.849-.175a9.798 9.798 0 0 1-2.203-3.796a.75.75 0 0 1 .271-.826l1.244-.916a1.38 1.38 0 0 0 0-2.226l-1.243-.914a.75.75 0 0 1-.272-.826a9.793 9.793 0 0 1 2.205-3.792a.75.75 0 0 1 .849-.174l1.4.615a1.387 1.387 0 0 0 1.93-1.118l.17-1.526a.75.75 0 0 1 .583-.65c.718-.159 1.45-.243 2.202-.252zm0 1.5a9.135 9.135 0 0 0-1.355.117l-.109.977A2.886 2.886 0 0 1 6.525 7.17l-.898-.394a8.293 8.293 0 0 0-1.348 2.317l.798.587a2.881 2.881 0 0 1 0 4.643l-.798.588c.32.842.775 1.626 1.347 2.322l.906-.397a2.882 2.882 0 0 1 4.017 2.318l.108.984c.89.15 1.799.15 2.689 0l.108-.984a2.88 2.88 0 0 1 4.02-2.322l.904.396a8.299 8.299 0 0 0 1.347-2.318l-.798-.588a2.88 2.88 0 0 1 0-4.643l.796-.587a8.293 8.293 0 0 0-1.348-2.317l-.896.393a2.884 2.884 0 0 1-4.023-2.324l-.11-.976a8.99 8.99 0 0 0-1.333-.117zM12 8.25a3.75 3.75 0 1 1 0 7.5a3.75 3.75 0 0 1 0-7.5zm0 1.5a2.25 2.25 0 1 0 0 4.5a2.25 2.25 0 0 0 0-4.5z"
+                                fill="currentColor" data-darkreader-inline-fill=""
+                                style="--darkreader-inline-fill: currentColor;"></path>
+                        </g>
+                    </svg>
                 </el-icon>
             </div>
         </div>
     </div>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .RightSidbarView {
     display: flex;
     border-top: solid 2px var(--border-color);

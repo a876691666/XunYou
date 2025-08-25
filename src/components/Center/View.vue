@@ -321,7 +321,7 @@ function on_whell(e: WheelEvent) {
 	</div>
 </template>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .View {
 	height: 100%;
 	margin: 0 15px;
