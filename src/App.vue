@@ -11,6 +11,9 @@ type app_style = {
   font_weight: number, //font-weight
   line_height: number, //line-height
   font_family: string, //font-family
+  bg_color: string, //background-color
+  font_color: string, //font-color
+  paragraph_spacing: number, //paragraph-spacing
 }
 
 const style_store = useStyleStore();
@@ -20,7 +23,8 @@ const cursor_store = useCursorStore();
 onBeforeMount(async () => {
   //取得配置文件中的设置信息
   let setting = await invoke<app_style>("cfg_app_get_style", {});
-  style_store.set(setting.font_size, setting.font_weight, setting.font_family, setting.line_height);
+  style_store.set(setting.font_size, setting.font_weight, setting.font_family, setting.line_height,
+    setting.bg_color, setting.font_color, setting.paragraph_spacing);
 });
 
 //初始化

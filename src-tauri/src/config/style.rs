@@ -8,7 +8,26 @@ pub struct StyleInfo {
     pub font_weight: u32,    //字体粗细
     pub line_height: u32,    //行高,除以10
     pub font_family: String, //字体
+    #[serde(default = "default_bg_color")]
+    pub bg_color: String,    //背景颜色
+    #[serde(default = "default_font_color")]
+    pub font_color: String,  //字体颜色
+    #[serde(default = "default_paragraph_spacing")]
+    pub paragraph_spacing: u32, //段落间距
 }
+
+fn default_bg_color() -> String {
+    "#ffffff".to_string()
+}
+
+fn default_font_color() -> String {
+    "#000000".to_string()
+}
+
+fn default_paragraph_spacing() -> u32 {
+    15
+}
+
 impl Default for StyleInfo {
     fn default() -> Self {
         Self {
@@ -16,6 +35,9 @@ impl Default for StyleInfo {
             font_weight: 400,
             line_height: 16,
             font_family: "楷体".to_string(),
+            bg_color: default_bg_color(),
+            font_color: default_font_color(),
+            paragraph_spacing: default_paragraph_spacing(),
         }
     }
 }

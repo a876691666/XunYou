@@ -343,11 +343,11 @@ function on_whell(e: WheelEvent) {
 
 	.line {
 		word-break: break-all;
-		color: var(--text-c3);
+		color: inherit;
 		user-select: text;
 		font-family: inherit;
 		font-weight: inherit;
-		margin: 15px 0;
+		margin: var(--paragraph-spacing, 15px) 0;
 
 		&::selection {
 			background: var(--selected-color);
