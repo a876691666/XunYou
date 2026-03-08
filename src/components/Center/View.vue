@@ -87,10 +87,10 @@ onMounted(async () => {
 
 	});
 	document.addEventListener("keyup", async e => {
-		if (e.key === "PageUp" || e.key == "ArrowLeft") {
+		if (e.key == "ArrowLeft") {
 			e.preventDefault();
 			prev_chapter();
-		} else if (e.key === 'PageDown' || e.key == "ArrowRight") {
+		} else if (e.key == "ArrowRight") {
 			e.preventDefault();
 			next_chapter();
 		}
@@ -260,12 +260,7 @@ async function onPositiveClick() {
 	show_edit_remark.value = false;
 }
 
-let change_page = 0;
-let timer:  number | undefined;
-
 function on_scroll() {
-	change_page = 0;
-
 	//获取所有段落
 	let ps = ref_div_content.value.querySelectorAll('div');
 	let p_rect = ref_div_content.value.getBoundingClientRect();
@@ -279,22 +274,10 @@ function on_scroll() {
 	}
 	novel_store.set_line(line);
 }
-
-function on_whell(e: WheelEvent) {
-	change_page = e.deltaY;
-	if (timer) clearTimeout(timer);
-	timer = setTimeout(() => {
-		if (change_page > 0) {
-			next_chapter();
-		} else if (change_page < 0) {
-			prev_chapter();
-		}
-	}, 200);
-}
 </script>
 
 <template>
-	<div class="View" @wheel="on_whell($event)">
+	<div class="View">
 		<el-scrollbar @scroll="on_scroll">
 			<div class="title" ref="ref_div_title">{{ novel_store.show_chapter.title }}</div>
 			<div class="content" ref="ref_div_content" :style="style_store.style">
@@ -324,8 +307,10 @@ function on_whell(e: WheelEvent) {
 <style scoped lang="scss">
 .View {
 	height: 100%;
-	margin: 0 15px;
+	margin: 0;
+	padding: 0 var(--page-padding, 5%);
 	border: none;
+	box-sizing: border-box;
 
 	&::-webkit-scrollbar {
 		width: 10px;

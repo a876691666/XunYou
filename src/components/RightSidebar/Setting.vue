@@ -38,6 +38,8 @@ const font_color = ref("");
 
 const paragraph_spacing = ref(0);
 
+const page_padding = ref(5);
+
 watch(font_size, () => {
     style_store.set_font_size(font_size.value);
     style_store.save();
@@ -66,6 +68,10 @@ watch(paragraph_spacing, () => {
     style_store.set_paragraph_spacing(paragraph_spacing.value);
     style_store.save();
 })
+watch(page_padding, () => {
+    style_store.set_page_padding(page_padding.value);
+    style_store.save();
+})
 
 
 onBeforeMount(() => {
@@ -76,6 +82,7 @@ onBeforeMount(() => {
     bg_color.value = style_store.bg_color;
     font_color.value = style_store.font_color;
     paragraph_spacing.value = style_store.paragraph_spacing;
+    page_padding.value = style_store.page_padding;
 });
 
 </script>
@@ -113,6 +120,10 @@ onBeforeMount(() => {
             <div>
                 <el-text>段落间距:</el-text>
                 <el-input-number v-model="paragraph_spacing" :min="0" :max="60" :step="1" step-strictly size="small" />
+            </div>
+            <div>
+                <el-text>页面内边距(%):</el-text>
+                <el-input-number v-model="page_padding" :min="0" :max="40" :step="1" step-strictly size="small" />
             </div>
         </div>
     </div>

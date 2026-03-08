@@ -14,6 +14,8 @@ pub struct StyleInfo {
     pub font_color: String,  //字体颜色
     #[serde(default = "default_paragraph_spacing")]
     pub paragraph_spacing: u32, //段落间距
+    #[serde(default = "default_page_padding")]
+    pub page_padding: u32, //页面内边距（百分比）
 }
 
 fn default_bg_color() -> String {
@@ -28,6 +30,10 @@ fn default_paragraph_spacing() -> u32 {
     15
 }
 
+fn default_page_padding() -> u32 {
+    5
+}
+
 impl Default for StyleInfo {
     fn default() -> Self {
         Self {
@@ -38,6 +44,7 @@ impl Default for StyleInfo {
             bg_color: default_bg_color(),
             font_color: default_font_color(),
             paragraph_spacing: default_paragraph_spacing(),
+            page_padding: default_page_padding(),
         }
     }
 }

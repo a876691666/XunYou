@@ -17,6 +17,8 @@ export const useStyleStore = defineStore('style', () => {
     const font_color = ref("#000000");
     //段落间距
     const paragraph_spacing = ref(15);
+    //页面内边距（百分比）
+    const page_padding = ref(5);
     //渲染样式
     const style = ref({
         fontSize: font_size.value + 'px',
@@ -27,10 +29,11 @@ export const useStyleStore = defineStore('style', () => {
         backgroundColor: bg_color.value,
         color: font_color.value,
         '--paragraph-spacing': paragraph_spacing.value + 'px',
+        '--page-padding': page_padding.value + '%',
     });
 
     function set(fsize: number, fweight: number, ffamily: string, lheight: number,
-        bgc?: string, fc?: string, ps?: number) {
+        bgc?: string, fc?: string, ps?: number, pp?: number) {
         font_size.value = fsize;
         font_weight.value = fweight;
         font_family.value = ffamily;
@@ -38,6 +41,7 @@ export const useStyleStore = defineStore('style', () => {
         if (bgc !== undefined) bg_color.value = bgc;
         if (fc !== undefined) font_color.value = fc;
         if (ps !== undefined) paragraph_spacing.value = ps;
+        if (pp !== undefined) page_padding.value = pp;
         render();
     }
 
@@ -76,6 +80,11 @@ export const useStyleStore = defineStore('style', () => {
         render();
     }
 
+    function set_page_padding(padding: number) {
+        page_padding.value = padding;
+        render();
+    }
+
     function render() {
         style.value = {
             fontSize: font_size.value + 'px',
@@ -86,6 +95,7 @@ export const useStyleStore = defineStore('style', () => {
             backgroundColor: bg_color.value,
             color: font_color.value,
             '--paragraph-spacing': paragraph_spacing.value + 'px',
+            '--page-padding': page_padding.value + '%',
         };
     }
 
@@ -99,16 +109,17 @@ export const useStyleStore = defineStore('style', () => {
                 bg_color: bg_color.value,
                 font_color: font_color.value,
                 paragraph_spacing: paragraph_spacing.value,
+                page_padding: page_padding.value,
             }
         });
     }
 
     return {
         font_family, font_size, font_weight, line_height,
-        bg_color, font_color, paragraph_spacing,
+        bg_color, font_color, paragraph_spacing, page_padding,
         style, set,
         set_font_size, set_font_family, set_font_weight, set_line_height,
-        set_bg_color, set_font_color, set_paragraph_spacing,
+        set_bg_color, set_font_color, set_paragraph_spacing, set_page_padding,
         save
     }
 })
