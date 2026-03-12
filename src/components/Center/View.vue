@@ -279,7 +279,7 @@ function on_scroll() {
 <template>
 	<div class="View">
 		<el-scrollbar @scroll="on_scroll">
-			<div class="title" ref="ref_div_title">{{ novel_store.show_chapter.title }}</div>
+			<div class="title" ref="ref_div_title" :style="{ fontSize: (style_store.font_size * 1.5) + 'px' }">{{ novel_store.show_chapter.title }}</div>
 			<div class="content" ref="ref_div_content" :style="style_store.style">
 				<div class="line" v-for="(item, index) in novel_store.show_chapter.lines" :key="index">
 					{{ item }}
@@ -317,7 +317,6 @@ function on_scroll() {
 	}
 
 	.title {
-		font-size: 25px;
 		color: var(--text-c3);
 		text-align: center;
 		margin: 15px 0;
